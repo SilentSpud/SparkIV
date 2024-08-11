@@ -34,7 +34,7 @@ using Directory=RageLib.FileSystem.Common.Directory;
 using File=RageLib.FileSystem.Common.File;
 using IODirectory = System.IO.Directory;
 using IOFile = System.IO.File;
-using Ookii.Dialogs;
+using Ookii.Dialogs.WinForms;
 
 namespace SparkIV
 {

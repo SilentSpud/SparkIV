@@ -102,13 +102,6 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Ookii.Dialogs">
-      <HintPath>..\..\..\..\Ookii.Dialogs.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -189,33 +182,9 @@
     <Compile Include="WaitCursor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RageLib\Audio\Audio.csproj">
-      <Project>{0D5CDB87-198D-4CD3-A06F-76AC76B7C35D}</Project>
-      <Name>Audio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RageLib\Common\Common.csproj">
+    <ProjectReference Include="..\RageLib\RageLib.csproj">
       <Project>{B2A6C9F9-A2BA-49EE-A364-2E839BD381BA}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RageLib\FileSystem\FileSystem.csproj">
-      <Project>{7001A079-BE0E-40DD-A3AB-2AB2B6474EEA}</Project>
-      <Name>FileSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RageLib\HyperText\HyperText.csproj">
-      <Project>{2DCDBA6F-9941-45E5-94A4-082ACB9486FC}</Project>
-      <Name>HyperText</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RageLib\Models\Models.csproj">
-      <Project>{BEC8B82B-9EB6-43CA-BB70-8AFB8729E230}</Project>
-      <Name>Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RageLib\Scripting\Scripting.csproj">
-      <Project>{545C8306-2D33-4498-BFD6-0B1A978F184D}</Project>
-      <Name>Scripting</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RageLib\Textures\Textures.csproj">
-      <Project>{C4085463-5BE2-4F87-8006-7FED126652F1}</Project>
-      <Name>Textures</Name>
+      <Name>RageLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -265,9 +234,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="SparkIV_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MaterialSkin">
+      <Version>0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Ookii.Dialogs.WinForms">
+      <Version>4.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
