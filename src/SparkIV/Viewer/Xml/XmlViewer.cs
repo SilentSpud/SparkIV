@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -27,33 +27,33 @@ using System.Xml.Xsl;
 
 namespace SparkIV.Viewer.Xml
 {
-    class XmlViewer : IViewer
+  class XmlViewer : IViewer
+  {
+    public Control GetView(RageLib.FileSystem.Common.File file)
     {
-        public Control GetView(RageLib.FileSystem.Common.File file)
-        {
-            var data = file.GetData();
+      var data = file.GetData();
 
-            Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("SparkIV.Viewer.Xml.defaultss.xslt");
+      Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("SparkIV.Viewer.Xml.defaultss.xslt");
 
-            XmlDocument doc = new XmlDocument();
-            doc.InnerXml = Encoding.ASCII.GetString(data);
+      XmlDocument doc = new XmlDocument();
+      doc.InnerXml = Encoding.ASCII.GetString(data);
 
-            XmlReader xr = XmlReader.Create(s);
-            XslCompiledTransform xct = new XslCompiledTransform();
-            xct.Load(xr);
+      XmlReader xr = XmlReader.Create(s);
+      XslCompiledTransform xct = new XslCompiledTransform();
+      xct.Load(xr);
 
-            StringBuilder sb = new StringBuilder();
-            XmlWriter xw = XmlWriter.Create(sb);
-            xct.Transform(doc, xw);
+      StringBuilder sb = new StringBuilder();
+      XmlWriter xw = XmlWriter.Create(sb);
+      xct.Transform(doc, xw);
 
-            WebBrowser browser = new WebBrowser();
-            browser.AllowNavigation = false;
-            browser.AllowWebBrowserDrop = false;
-            //browser.WebBrowserShortcutsEnabled = false;
-            browser.IsWebBrowserContextMenuEnabled = false;
+      WebBrowser browser = new WebBrowser();
+      browser.AllowNavigation = false;
+      browser.AllowWebBrowserDrop = false;
+      //browser.WebBrowserShortcutsEnabled = false;
+      browser.IsWebBrowserContextMenuEnabled = false;
 
-            browser.DocumentText = sb.ToString();
-            return browser;
-        }
+      browser.DocumentText = sb.ToString();
+      return browser;
     }
+  }
 }

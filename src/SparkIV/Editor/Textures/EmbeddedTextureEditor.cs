@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -21,44 +21,44 @@
 using System.IO;
 using RageLib.Common.Resources;
 using RageLib.Textures;
-using File=RageLib.FileSystem.Common.File;
+using File = RageLib.FileSystem.Common.File;
 
 namespace SparkIV.Editor.Textures
 {
-    class EmbeddedTextureEditor : TextureEditor
+  class EmbeddedTextureEditor : TextureEditor
+  {
+    protected override void SaveAndClose(EditorForm form, TextureFile textureFile, File file)
     {
-        protected override void SaveAndClose(EditorForm form, TextureFile textureFile, File file)
+      using (new WaitCursor(form))
+      {
+        var resourceFile = new ResourceFile();
+        using (var ms = new MemoryStream(file.GetData()))
         {
-            using (new WaitCursor(form))
-            {
-                var resourceFile = new ResourceFile();
-                using (var ms = new MemoryStream(file.GetData()))
-                {
-                    resourceFile.Read(ms);
-                }
-
-                var msSystem = new MemoryStream(resourceFile.SystemMemData);
-                var msGraphics = new MemoryStream(resourceFile.GraphicsMemData);
-
-                try
-                {
-                    textureFile.Save(msSystem, msGraphics);
-                }
-                finally
-                {
-                    msSystem.Close();
-                    msGraphics.Close();
-                }
-
-                using (var resMS = new MemoryStream())
-                {
-                    resourceFile.Write(resMS);
-                    file.SetData(resMS.ToArray());
-                }
-            }
-
-            form.Close();
-
+          resourceFile.Read(ms);
         }
+
+        var msSystem = new MemoryStream(resourceFile.SystemMemData);
+        var msGraphics = new MemoryStream(resourceFile.GraphicsMemData);
+
+        try
+        {
+          textureFile.Save(msSystem, msGraphics);
+        }
+        finally
+        {
+          msSystem.Close();
+          msGraphics.Close();
+        }
+
+        using (var resMS = new MemoryStream())
+        {
+          resourceFile.Write(resMS);
+          file.SetData(resMS.ToArray());
+        }
+      }
+
+      form.Close();
+
     }
+  }
 }

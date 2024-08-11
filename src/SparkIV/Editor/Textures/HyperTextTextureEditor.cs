@@ -22,36 +22,36 @@ using System.IO;
 using System.Windows.Forms;
 using RageLib.FileSystem.Common;
 using RageLib.HyperText;
-using File=RageLib.FileSystem.Common.File;
+using File = RageLib.FileSystem.Common.File;
 
 namespace SparkIV.Editor.Textures
 {
-    class HyperTextTextureEditor : EmbeddedTextureEditor
+  class HyperTextTextureEditor : EmbeddedTextureEditor
+  {
+    public override void LaunchEditor(FileSystem fs, File file)
     {
-        public override void LaunchEditor(FileSystem fs, File file)
-        {
-            var data = file.GetData();
+      var data = file.GetData();
 
-            var ms = new MemoryStream(data);
-            var hyperTextFile = new HyperTextFile();
-            try
-            {
-                hyperTextFile.Open(ms);
-            }
-            finally
-            {
-                ms.Close();
-            }
+      var ms = new MemoryStream(data);
+      var hyperTextFile = new HyperTextFile();
+      try
+      {
+        hyperTextFile.Open(ms);
+      }
+      finally
+      {
+        ms.Close();
+      }
 
-            if (hyperTextFile.EmbeddedTextureFile != null)
-            {
-                ShowForm(file, hyperTextFile.EmbeddedTextureFile);
-            }
-            else
-            {
-                MessageBox.Show("There are no embedded textures in the selected HyperText file to edit.", "Edit",
-                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
+      if (hyperTextFile.EmbeddedTextureFile != null)
+      {
+        ShowForm(file, hyperTextFile.EmbeddedTextureFile);
+      }
+      else
+      {
+        MessageBox.Show("There are no embedded textures in the selected HyperText file to edit.", "Edit",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+      }
     }
+  }
 }

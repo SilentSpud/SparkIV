@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -24,28 +24,28 @@ using RageLib.Textures;
 
 namespace SparkIV.Viewer.Textures
 {
-    class TextureViewer : IViewer
+  class TextureViewer : IViewer
+  {
+    public Control GetView(RageLib.FileSystem.Common.File file)
     {
-        public Control GetView(RageLib.FileSystem.Common.File file)
-        {
-            var data = file.GetData();
+      var data = file.GetData();
 
-            var ms = new MemoryStream(data);
-            var textureFile = new TextureFile();
-            try
-            {
-                textureFile.Open(ms);
-            }
-            finally
-            {
-                ms.Close();
-            }
+      var ms = new MemoryStream(data);
+      var textureFile = new TextureFile();
+      try
+      {
+        textureFile.Open(ms);
+      }
+      finally
+      {
+        ms.Close();
+      }
 
-            var view = new TexturePreviewView();
-            var controller = new TexturePreviewController(view);
-            controller.TextureFile = textureFile;
+      var view = new TexturePreviewView();
+      var controller = new TexturePreviewController(view);
+      controller.TextureFile = textureFile;
 
-            return view;
-        }
+      return view;
     }
+  }
 }

@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -26,32 +26,32 @@ using System.Reflection;
 
 namespace SparkIV
 {
-    static class Program
+  static class Program
+  {
+
+    /// <summary>
+    /// The main entry point for the application.
+    /// </summary>
+    [STAThread]
+    static void Main(string[] args)
     {
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
 
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main(string[] args)
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+      /*
+      Version envVer = Environment.Version;
+      if (envVer.Major <= 2 && envVer.Revision < 1435) // 2.0 SP1 (http://en.wikipedia.org/wiki/.NET_Framework_version_list)
+      {
+          MessageBox.Show("It appears that you are not running the latest version of the .NET Framework.\n\n" +
+              "SparkIV requires that you atleast have both .NET Framework 2.0 SP1 and 3.0 installed. " + 
+              "Alternatively an install of .NET Framework 3.5 will install both these components.",
+              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          return;
+      }
+       */
 
-            /*
-            Version envVer = Environment.Version;
-            if (envVer.Major <= 2 && envVer.Revision < 1435) // 2.0 SP1 (http://en.wikipedia.org/wiki/.NET_Framework_version_list)
-            {
-                MessageBox.Show("It appears that you are not running the latest version of the .NET Framework.\n\n" +
-                    "SparkIV requires that you atleast have both .NET Framework 2.0 SP1 and 3.0 installed. " + 
-                    "Alternatively an install of .NET Framework 3.5 will install both these components.",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-             */
-
-            Application.Run(new MainForm());
-        }
+      Application.Run(new MainForm());
     }
+  }
 }
 

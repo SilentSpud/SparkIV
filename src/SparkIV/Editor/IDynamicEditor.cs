@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -20,8 +20,8 @@
 
 namespace SparkIV.Editor
 {
-    interface IDynamicEditor
-    {
-        bool SupportsExtension(string extension);
-    }
+  interface IDynamicEditor
+  {
+    bool SupportsExtension(string extension);
+  }
 }

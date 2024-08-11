@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -20,28 +20,28 @@
 
 namespace SparkIV.Viewer.Script
 {
-    class ScruffFormat : Manoli.Utils.CSharpFormat.CLikeFormat
+  class ScruffFormat : Manoli.Utils.CSharpFormat.CLikeFormat
+  {
+    /// <summary>
+    /// The list of C# keywords.
+    /// </summary>
+    protected override string Keywords
     {
-        /// <summary>
-        /// The list of C# keywords.
-        /// </summary>
-        protected override string Keywords
-        {
-            get
-            {
-                return "void function auto return if else while switch case default break float int";
-            }
-        }
-
-        /// <summary>
-        /// The list of C# preprocessors.
-        /// </summary>
-        protected override string Preprocessors
-        {
-            get
-            {
-                return "";
-            }
-        }
+      get
+      {
+        return "void function auto return if else while switch case default break float int";
+      }
     }
+
+    /// <summary>
+    /// The list of C# preprocessors.
+    /// </summary>
+    protected override string Preprocessors
+    {
+      get
+      {
+        return "";
+      }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2009  Arushan/Aru <oneforaru at gmail.com>
@@ -24,32 +24,32 @@ using RageLib.Models;
 
 namespace SparkIV.Viewer.Models
 {
-    class ModelFragTypeViewer : ModelViewer
+  class ModelFragTypeViewer : ModelViewer
+  {
+    #region Implementation of IViewer
+
+    public override Control GetView(RageLib.FileSystem.Common.File file)
     {
-        #region Implementation of IViewer
+      var data = file.GetData();
 
-        public override Control GetView(RageLib.FileSystem.Common.File file)
-        {
-            var data = file.GetData();
+      var ms = new MemoryStream(data);
+      var modelFile = new ModelFragTypeFile();
+      try
+      {
+        modelFile.Open(ms);
+      }
+      catch
+      {
+        return null;
+      }
+      finally
+      {
+        ms.Close();
+      }
 
-            var ms = new MemoryStream(data);
-            var modelFile = new ModelFragTypeFile();
-            try
-            {
-                modelFile.Open(ms);
-            }
-            catch
-            {
-                return null;
-            }
-            finally
-            {
-                ms.Close();
-            }
-
-            return CreateControl(file, modelFile);
-        }
-
-        #endregion
+      return CreateControl(file, modelFile);
     }
+
+    #endregion
+  }
 }

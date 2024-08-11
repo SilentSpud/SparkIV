@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -24,30 +24,30 @@ using RageLib.Audio;
 
 namespace SparkIV.Viewer.Audio
 {
-    class AudioViewer : IViewer
+  class AudioViewer : IViewer
+  {
+    public Control GetView(RageLib.FileSystem.Common.File file)
     {
-        public Control GetView(RageLib.FileSystem.Common.File file)
-        {
-            var data = file.GetData();
+      var data = file.GetData();
 
-            var ms = new MemoryStream(data);
-            var audioFile = new AudioFile();
-            try
-            {
-                audioFile.Open(ms);
-            }
-            catch
-            {
-                ms.Close();
+      var ms = new MemoryStream(data);
+      var audioFile = new AudioFile();
+      try
+      {
+        audioFile.Open(ms);
+      }
+      catch
+      {
+        ms.Close();
 
-                throw;
-            }
+        throw;
+      }
 
-            var view = new AudioView();
-            var controller = new AudioViewController(view);
-            controller.AudioFile = audioFile;
+      var view = new AudioView();
+      var controller = new AudioViewController(view);
+      controller.AudioFile = audioFile;
 
-            return view;
-        }
+      return view;
     }
+  }
 }

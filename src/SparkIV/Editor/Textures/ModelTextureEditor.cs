@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -22,36 +22,36 @@ using System.IO;
 using System.Windows.Forms;
 using RageLib.FileSystem.Common;
 using RageLib.Models;
-using File=RageLib.FileSystem.Common.File;
+using File = RageLib.FileSystem.Common.File;
 
 namespace SparkIV.Editor.Textures
 {
-    class ModelTextureEditor : EmbeddedTextureEditor
+  class ModelTextureEditor : EmbeddedTextureEditor
+  {
+    public override void LaunchEditor(FileSystem fs, File file)
     {
-        public override void LaunchEditor(FileSystem fs, File file)
-        {
-            var data = file.GetData();
+      var data = file.GetData();
 
-            var ms = new MemoryStream(data);
-            var modelFile = new ModelFile();
-            try
-            {
-                modelFile.Open(ms);
-            }
-            finally
-            {
-                ms.Close();
-            }
+      var ms = new MemoryStream(data);
+      var modelFile = new ModelFile();
+      try
+      {
+        modelFile.Open(ms);
+      }
+      finally
+      {
+        ms.Close();
+      }
 
-            if (modelFile.EmbeddedTextureFile != null)
-            {
-                ShowForm(file, modelFile.EmbeddedTextureFile);
-            }
-            else
-            {
-                MessageBox.Show("There are no embedded textures in the selected model file to edit.", "Edit",
-                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
+      if (modelFile.EmbeddedTextureFile != null)
+      {
+        ShowForm(file, modelFile.EmbeddedTextureFile);
+      }
+      else
+      {
+        MessageBox.Show("There are no embedded textures in the selected model file to edit.", "Edit",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+      }
     }
+  }
 }

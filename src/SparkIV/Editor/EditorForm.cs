@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV - Textures
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -22,31 +22,31 @@ using System.Windows.Forms;
 
 namespace SparkIV.Editor
 {
-    public partial class EditorForm : Form
+  public partial class EditorForm : Form
+  {
+    private Control _viewControl;
+
+    public EditorForm()
     {
-        private Control _viewControl;
-
-        public EditorForm()
-        {
-            InitializeComponent();
-        }
-
-        public void SetFilename(string filename)
-        {
-            Text = "Spark IV - Edit - " + filename;
-        }
-
-        public void SetControl(Control control)
-        {
-            if (_viewControl != null)
-            {
-                Controls.Remove(_viewControl);
-            }
-
-            _viewControl = control;
-            _viewControl.Parent = this;
-            _viewControl.Dock = DockStyle.Fill;
-            Controls.Add(_viewControl);
-        }
+      InitializeComponent();
     }
+
+    public void SetFilename(string filename)
+    {
+      Text = "Spark IV - Edit - " + filename;
+    }
+
+    public void SetControl(Control control)
+    {
+      if (_viewControl != null)
+      {
+        Controls.Remove(_viewControl);
+      }
+
+      _viewControl = control;
+      _viewControl.Parent = this;
+      _viewControl.Dock = DockStyle.Fill;
+      Controls.Add(_viewControl);
+    }
+  }
 }

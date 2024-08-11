@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -22,12 +22,12 @@ using System.Xml.Serialization;
 
 namespace SparkIV.Config.Value
 {
-    public class ExtensionType
-    {
-        [XmlAttribute("Extension")]
-        public string Extension { get; set; }
+  public class ExtensionType
+  {
+    [XmlAttribute("Extension")]
+    public string Extension { get; set; }
 
-        [XmlAttribute("Type")]
-        public string Type { get; set; }
-    }
+    [XmlAttribute("Type")]
+    public string Type { get; set; }
+  }
 }

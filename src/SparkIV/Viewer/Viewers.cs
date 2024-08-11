@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -26,55 +26,55 @@ using SparkIV.Config;
 
 namespace SparkIV.Viewer
 {
-    static class Viewers
+  static class Viewers
+  {
+    static readonly Dictionary<string, IViewer> _viewers = new Dictionary<string, IViewer>();
+
+    static Viewers()
     {
-        static readonly Dictionary<string, IViewer> _viewers = new Dictionary<string, IViewer>();
-
-        static Viewers()
+      foreach (var viewer in SparkIVConfig.Instance.Viewers)
+      {
+        var viewerType = Type.GetType(viewer.Type);
+        if (viewerType != null)
         {
-            foreach (var viewer in SparkIVConfig.Instance.Viewers)
+          var viewerObject = Activator.CreateInstance(viewerType);
+
+          if (viewerObject is IViewer)
+          {
+            var extensions = viewer.Extension.Split(',');
+
+            foreach (var s in extensions)
             {
-                var viewerType = Type.GetType(viewer.Type);
-                if (viewerType != null)
-                {
-                    var viewerObject = Activator.CreateInstance(viewerType);
-
-                    if (viewerObject is IViewer)
-                    {
-                        var extensions = viewer.Extension.Split(',');
-
-                        foreach (var s in extensions)
-                        {
-                            _viewers.Add(s, viewerObject as IViewer);
-                        }
-                    }
-                }
+              _viewers.Add(s, viewerObject as IViewer);
             }
+          }
         }
-
-        public static bool HasViewer(File file)
-        {
-            var fileName = file.Name;
-            var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);
-
-            return _viewers.ContainsKey(extension);
-        }
-
-        public static Control GetControl(File file)
-        {
-            var fileName = file.Name;
-            var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);
-
-            if (_viewers.ContainsKey(extension))
-            {
-                var control = _viewers[extension].GetView(file);
-                if (control != null)
-                {
-                    return control;
-                }
-            }
-
-            return null;
-        }
+      }
     }
+
+    public static bool HasViewer(File file)
+    {
+      var fileName = file.Name;
+      var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);
+
+      return _viewers.ContainsKey(extension);
+    }
+
+    public static Control GetControl(File file)
+    {
+      var fileName = file.Name;
+      var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);
+
+      if (_viewers.ContainsKey(extension))
+      {
+        var control = _viewers[extension].GetView(file);
+        if (control != null)
+        {
+          return control;
+        }
+      }
+
+      return null;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -23,14 +23,14 @@ using System.Windows.Forms;
 
 namespace SparkIV.Config
 {
-    static class SparkIVConfig
-    {
-        public static readonly Value.Config Instance;
+  static class SparkIVConfig
+  {
+    public static readonly Value.Config Instance;
 
-        static SparkIVConfig()
-        {
-            var appPath = Path.GetDirectoryName(Application.ExecutablePath);
-            Instance = XmlPersister.Load<Value.Config>(Path.Combine(appPath, "SparkIV.Config.xml"));
-        }
+    static SparkIVConfig()
+    {
+      var appPath = Path.GetDirectoryName(Application.ExecutablePath);
+      Instance = XmlPersister.Load<Value.Config>(Path.Combine(appPath, "SparkIV.Config.xml"));
     }
+  }
 }

@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -22,8 +22,8 @@ using RageLib.FileSystem.Common;
 
 namespace SparkIV.Editor
 {
-    interface IEditor
-    {
-        void LaunchEditor(FileSystem fs, File file);
-    }
+  interface IEditor
+  {
+    void LaunchEditor(FileSystem fs, File file);
+  }
 }

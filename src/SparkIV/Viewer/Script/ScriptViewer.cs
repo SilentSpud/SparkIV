@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -24,26 +24,26 @@ using RageLib.Scripting;
 
 namespace SparkIV.Viewer.Script
 {
-    class ScriptViewer : IViewer
+  class ScriptViewer : IViewer
+  {
+    public Control GetView(RageLib.FileSystem.Common.File file)
     {
-        public Control GetView(RageLib.FileSystem.Common.File file)
-        {
-            var data = file.GetData();
+      var data = file.GetData();
 
-            ScriptFile scriptFile = new ScriptFile();
-            //try
-            {
-                scriptFile.Open(new MemoryStream(data));
-            }
-            /*catch
-            {
-                return null;
-            }*/
+      ScriptFile scriptFile = new ScriptFile();
+      //try
+      {
+        scriptFile.Open(new MemoryStream(data));
+      }
+      /*catch
+      {
+          return null;
+      }*/
 
-            ScriptView view = new ScriptView();
-            view.ScriptFile = scriptFile;
+      ScriptView view = new ScriptView();
+      view.ScriptFile = scriptFile;
 
-            return view;
-        }
+      return view;
     }
+  }
 }

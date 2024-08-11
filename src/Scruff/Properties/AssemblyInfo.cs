@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Scruff -- A Rage Script File Decompiler/Disassembler
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>

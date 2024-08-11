@@ -1,0 +1,12 @@
+# top-most EditorConfig file
+root = true
+
+# Global settings
+[*]
+end_of_line = lf
+charset = utf-8
+
+# C# files
+[*.cs]
+indent_style = space
+indent_size = 2

@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -25,70 +25,70 @@ using SparkIV.Config;
 
 namespace SparkIV.Editor
 {
-    class Editors
+  class Editors
+  {
+    static readonly Dictionary<string, IEditor> _editors = new Dictionary<string, IEditor>();
+
+    static Editors()
     {
-        static readonly Dictionary<string, IEditor> _editors = new Dictionary<string, IEditor>();
-
-        static Editors()
+      foreach (var editor in SparkIVConfig.Instance.Editors)
+      {
+        var editorType = Type.GetType(editor.Type);
+        if (editorType != null)
         {
-            foreach (var editor in SparkIVConfig.Instance.Editors)
+          var editorObject = Activator.CreateInstance(editorType);
+
+          if (editorObject is IEditor)
+          {
+            var extensions = editor.Extension.Split(',');
+
+            foreach (var s in extensions)
             {
-                var editorType = Type.GetType(editor.Type);
-                if (editorType != null)
-                {
-                    var editorObject = Activator.CreateInstance(editorType);
-
-                    if (editorObject is IEditor)
-                    {
-                        var extensions = editor.Extension.Split(',');
-
-                        foreach (var s in extensions)
-                        {
-                            _editors.Add(s, editorObject as IEditor);
-                        }
-                    }
-                }
+              _editors.Add(s, editorObject as IEditor);
             }
+          }
         }
-
-        public static bool HasEditor(File file)
-        {
-            var fileName = file.Name;
-            var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);
-            
-            bool hasEditor = _editors.ContainsKey(extension);
-
-            if (!hasEditor && _editors.ContainsKey(""))
-            {
-                var dynamicEditor = _editors[""] as IDynamicEditor;
-                if (dynamicEditor != null)
-                {
-                    hasEditor = dynamicEditor.SupportsExtension(extension);
-                }
-            }
-
-            return hasEditor;
-        }
-
-        public static void LaunchEditor(FileSystem fs, File file)
-        {
-            var fileName = file.Name;
-            var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);
-
-            if (_editors.ContainsKey(extension))
-            {
-                var editor = _editors[extension];
-                editor.LaunchEditor(fs, file);
-            }
-            else
-            {
-                var editor = _editors[""];
-                if (editor != null)
-                {
-                    editor.LaunchEditor(fs, file);
-                }
-            }
-        }
-
+      }
     }
+
+    public static bool HasEditor(File file)
+    {
+      var fileName = file.Name;
+      var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);
+
+      bool hasEditor = _editors.ContainsKey(extension);
+
+      if (!hasEditor && _editors.ContainsKey(""))
+      {
+        var dynamicEditor = _editors[""] as IDynamicEditor;
+        if (dynamicEditor != null)
+        {
+          hasEditor = dynamicEditor.SupportsExtension(extension);
+        }
+      }
+
+      return hasEditor;
+    }
+
+    public static void LaunchEditor(FileSystem fs, File file)
+    {
+      var fileName = file.Name;
+      var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);
+
+      if (_editors.ContainsKey(extension))
+      {
+        var editor = _editors[extension];
+        editor.LaunchEditor(fs, file);
+      }
+      else
+      {
+        var editor = _editors[""];
+        if (editor != null)
+        {
+          editor.LaunchEditor(fs, file);
+        }
+      }
+    }
+
+  }
 }

@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -23,19 +23,19 @@ using System.Windows.Forms;
 
 namespace SparkIV
 {
-    class WaitCursor : IDisposable
+  class WaitCursor : IDisposable
+  {
+    private readonly Form _form;
+
+    public WaitCursor(Form form)
     {
-        private readonly Form _form;
-
-        public WaitCursor(Form form)
-        {
-            _form = form;
-            form.Cursor = Cursors.WaitCursor;
-        }
-
-        public void Dispose()
-        {
-            _form.Cursor = Cursors.Default;
-        }
+      _form = form;
+      form.Cursor = Cursors.WaitCursor;
     }
+
+    public void Dispose()
+    {
+      _form.Cursor = Cursors.Default;
+    }
+  }
 }

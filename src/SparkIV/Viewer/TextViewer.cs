@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -25,23 +25,23 @@ using RageLib.FileSystem.Common;
 
 namespace SparkIV.Viewer
 {
-    class TextViewer : IViewer
+  class TextViewer : IViewer
+  {
+    public Control GetView(File file)
     {
-        public Control GetView(File file)
-        {
-            var data = file.GetData();
+      var data = file.GetData();
 
-            TextBox textBox = new TextBox();
-            textBox.Font = new Font("Courier New", 10);
-            textBox.ReadOnly = true;
-            textBox.BackColor = SystemColors.Window;
-            textBox.Text = Encoding.ASCII.GetString(data);
-            textBox.Multiline = true;
-            textBox.ScrollBars = ScrollBars.Both;
-            textBox.SelectionStart = 0;
-            textBox.SelectionLength = 0;
-            textBox.WordWrap = false;
-            return textBox;
-        }
+      TextBox textBox = new TextBox();
+      textBox.Font = new Font("Courier New", 10);
+      textBox.ReadOnly = true;
+      textBox.BackColor = SystemColors.Window;
+      textBox.Text = Encoding.ASCII.GetString(data);
+      textBox.Multiline = true;
+      textBox.ScrollBars = ScrollBars.Both;
+      textBox.SelectionStart = 0;
+      textBox.SelectionLength = 0;
+      textBox.WordWrap = false;
+      return textBox;
     }
+  }
 }

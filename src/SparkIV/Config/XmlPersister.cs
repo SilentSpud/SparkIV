@@ -25,44 +25,44 @@ using System.Xml.Serialization;
 
 namespace SparkIV.Config
 {
-    internal static class XmlPersister
+  internal static class XmlPersister
+  {
+    public static T Load<T>(string file) where T : class
     {
-        public static T Load<T>(string file) where T : class
-        {
-            T value = null;
-            var fs = new FileStream(file, FileMode.Open, FileAccess.Read);
-            try
-            {
-                var xs = new XmlSerializer(typeof (T));
-                value = xs.Deserialize(fs) as T;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error: " + e.Message);
-            }
-            finally
-            {
-                fs.Close();
-            }
-            return value;
-        }
-
-        public static void Save<T>(string file, T value) where T : class
-        {
-            var fs = new FileStream(file, FileMode.Create, FileAccess.Write);
-            try
-            {
-                var xs = new XmlSerializer(typeof (T));
-                xs.Serialize(fs, value);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error: " + e.Message);
-            }
-            finally
-            {
-                fs.Close();
-            }
-        }
+      T value = null;
+      var fs = new FileStream(file, FileMode.Open, FileAccess.Read);
+      try
+      {
+        var xs = new XmlSerializer(typeof(T));
+        value = xs.Deserialize(fs) as T;
+      }
+      catch (Exception e)
+      {
+        MessageBox.Show("Error: " + e.Message);
+      }
+      finally
+      {
+        fs.Close();
+      }
+      return value;
     }
+
+    public static void Save<T>(string file, T value) where T : class
+    {
+      var fs = new FileStream(file, FileMode.Create, FileAccess.Write);
+      try
+      {
+        var xs = new XmlSerializer(typeof(T));
+        xs.Serialize(fs, value);
+      }
+      catch (Exception e)
+      {
+        MessageBox.Show("Error: " + e.Message);
+      }
+      finally
+      {
+        fs.Close();
+      }
+    }
+  }
 }

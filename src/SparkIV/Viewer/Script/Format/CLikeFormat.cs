@@ -1,4 +1,4 @@
-#region Copyright © 2001-2003 Jean-Claude Manoli [jc@manoli.net]
+#region Copyright Â© 2001-2003 Jean-Claude Manoli [jc@manoli.net]
 /*
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the author(s) be held liable for any damages arising from
@@ -17,7 +17,7 @@
  *      be misrepresented as being the original software.
  * 
  *   3. This notice may not be removed or altered from any source distribution.
- */ 
+ */
 #endregion
 
 using System;
@@ -27,27 +27,27 @@ using System.Text.RegularExpressions;
 
 namespace Manoli.Utils.CSharpFormat
 {
-	/// <summary>
-	/// Provides a base class for formatting languages similar to C.
-	/// </summary>
-	public abstract class CLikeFormat : CodeFormat
-	{
-		/// <summary>
-		/// Regular expression string to match single line and multi-line 
-		/// comments (// and /* */). 
-		/// </summary>
-		protected override string CommentRegEx
-		{
-			get { return @"/\*.*?\*/|//.*?(?=\r|\n)"; }
-		}
+  /// <summary>
+  /// Provides a base class for formatting languages similar to C.
+  /// </summary>
+  public abstract class CLikeFormat : CodeFormat
+  {
+    /// <summary>
+    /// Regular expression string to match single line and multi-line 
+    /// comments (// and /* */). 
+    /// </summary>
+    protected override string CommentRegEx
+    {
+      get { return @"/\*.*?\*/|//.*?(?=\r|\n)"; }
+    }
 
-		/// <summary>
-		/// Regular expression string to match string and character literals. 
-		/// </summary>
-		protected override string StringRegEx
-		{
-			get { return @"@?""""|@?"".*?(?!\\).""|''|'.*?(?!\\).'"; }
-		}
-	}
+    /// <summary>
+    /// Regular expression string to match string and character literals. 
+    /// </summary>
+    protected override string StringRegEx
+    {
+      get { return @"@?""""|@?"".*?(?!\\).""|''|'.*?(?!\\).'"; }
+    }
+  }
 }
 

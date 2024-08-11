@@ -23,15 +23,15 @@ using System.Xml.Serialization;
 
 namespace SparkIV.Config.Value
 {
-    [XmlRoot("SparkIV"), Serializable]
-    public class Config
-    {
-        [XmlArray("Viewers")]
-        [XmlArrayItem("Viewer", typeof(ExtensionType))]
-        public ExtensionType[] Viewers { get; set; }
+  [XmlRoot("SparkIV"), Serializable]
+  public class Config
+  {
+    [XmlArray("Viewers")]
+    [XmlArrayItem("Viewer", typeof(ExtensionType))]
+    public ExtensionType[] Viewers { get; set; }
 
-        [XmlArray("Editors")]
-        [XmlArrayItem("Editor", typeof(ExtensionType))]
-        public ExtensionType[] Editors { get; set; }
-    }
+    [XmlArray("Editors")]
+    [XmlArrayItem("Editor", typeof(ExtensionType))]
+    public ExtensionType[] Editors { get; set; }
+  }
 }

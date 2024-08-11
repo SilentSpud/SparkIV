@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -21,24 +21,24 @@
 using System.IO;
 using RageLib.FileSystem;
 using RageLib.FileSystem.Common;
-using File=RageLib.FileSystem.Common.File;
+using File = RageLib.FileSystem.Common.File;
 
 namespace SparkIV.Editor
 {
-    class SparkIVEditor : IEditor
+  class SparkIVEditor : IEditor
+  {
+    public void LaunchEditor(FileSystem fs, File file)
     {
-        public void LaunchEditor(FileSystem fs, File file)
-        {
-            if (fs is RealFileSystem)
-            {
-                var form = new MainForm();
-                form.Show();
+      if (fs is RealFileSystem)
+      {
+        var form = new MainForm();
+        form.Show();
 
-                DirectoryInfo parent = new DirectoryInfo((fs as RealFileSystem).RealDirectory).Parent;
-                string archiveFilename = parent == null ? file.FullName : Path.Combine(parent.FullName, file.FullName);
-                form.OpenFile(archiveFilename, null);
-            }
+        DirectoryInfo parent = new DirectoryInfo((fs as RealFileSystem).RealDirectory).Parent;
+        string archiveFilename = parent == null ? file.FullName : Path.Combine(parent.FullName, file.FullName);
+        form.OpenFile(archiveFilename, null);
+      }
 
-        }
     }
+  }
 }

@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -23,8 +23,8 @@ using RageLib.FileSystem.Common;
 
 namespace SparkIV.Viewer
 {
-    interface IViewer
-    {
-        Control GetView(File file);
-    }
+  interface IViewer
+  {
+    Control GetView(File file);
+  }
 }

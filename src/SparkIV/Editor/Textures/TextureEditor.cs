@@ -1,4 +1,4 @@
-﻿/**********************************************************************\
+/**********************************************************************\
 
  Spark IV
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -21,68 +21,68 @@
 using System.IO;
 using RageLib.FileSystem.Common;
 using RageLib.Textures;
-using File=RageLib.FileSystem.Common.File;
+using File = RageLib.FileSystem.Common.File;
 
 namespace SparkIV.Editor.Textures
 {
-    class TextureEditor : IEditor
+  class TextureEditor : IEditor
+  {
+    public virtual void LaunchEditor(FileSystem fs, File file)
     {
-        public virtual void LaunchEditor(FileSystem fs, File file)
-        {
-            var data = file.GetData();
+      var data = file.GetData();
 
-            var ms = new MemoryStream(data);
-            var textureFile = new TextureFile();
-            try
-            {
-                textureFile.Open(ms);
-            }
-            finally
-            {
-                ms.Close();
-            }
+      var ms = new MemoryStream(data);
+      var textureFile = new TextureFile();
+      try
+      {
+        textureFile.Open(ms);
+      }
+      finally
+      {
+        ms.Close();
+      }
 
-            ShowForm(file, textureFile);
-        }
-
-        protected void ShowForm(File file, TextureFile textureFile)
-        {
-            var view = new TextureEditView();
-            
-            var controller = new TextureEditController(view);
-            controller.TextureFile = textureFile;
-
-            using (var form = new EditorForm())
-            {
-                form.SetFilename(file.Name);
-                form.SetControl(view);
-
-                controller.SaveAndClose += ((sender, e) => SaveAndClose(form, textureFile, file));
-
-                form.ShowDialog();
-            }
-
-            textureFile.Dispose();
-        }
-
-        protected virtual void SaveAndClose(EditorForm form, TextureFile textureFile, File file)
-        {
-            using (new WaitCursor(form))
-            {
-                var msSave = new MemoryStream();
-                try
-                {
-                    textureFile.Save(msSave);
-
-                    file.SetData(msSave.ToArray());
-                }
-                finally
-                {
-                    msSave.Close();
-                }
-            }
-
-            form.Close();
-        }
+      ShowForm(file, textureFile);
     }
+
+    protected void ShowForm(File file, TextureFile textureFile)
+    {
+      var view = new TextureEditView();
+
+      var controller = new TextureEditController(view);
+      controller.TextureFile = textureFile;
+
+      using (var form = new EditorForm())
+      {
+        form.SetFilename(file.Name);
+        form.SetControl(view);
+
+        controller.SaveAndClose += ((sender, e) => SaveAndClose(form, textureFile, file));
+
+        form.ShowDialog();
+      }
+
+      textureFile.Dispose();
+    }
+
+    protected virtual void SaveAndClose(EditorForm form, TextureFile textureFile, File file)
+    {
+      using (new WaitCursor(form))
+      {
+        var msSave = new MemoryStream();
+        try
+        {
+          textureFile.Save(msSave);
+
+          file.SetData(msSave.ToArray());
+        }
+        finally
+        {
+          msSave.Close();
+        }
+      }
+
+      form.Close();
+    }
+  }
 }
