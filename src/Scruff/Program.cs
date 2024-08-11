@@ -208,7 +208,7 @@ namespace Scruff
       }
 
 #if DEBUG
-            Console.ReadLine();
+      Console.ReadLine();
 #endif
 
       return 0;
