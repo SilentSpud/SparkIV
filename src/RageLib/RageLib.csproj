@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows8.0</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,7 +14,7 @@
     <PackageReference Include="SharpZipLib" Version="1.4.2" />
     <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Content Include="lib\ragezip.dll">
       <Link>ragezip.dll</Link>

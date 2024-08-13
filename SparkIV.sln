@@ -3,34 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RageLib", "src\RageLib\RageLib.csproj", "{B2A6C9F9-A2BA-49EE-A364-2E839BD381BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RageLib", "src\RageLib\RageLib.csproj", "{B2A6C9F9-A2BA-49EE-A364-2E839BD381BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resoursaur", "src\Resoursaur\Resoursaur.csproj", "{09683D73-98F5-41DE-AD4A-4732793902D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resoursaur", "src\Resoursaur\Resoursaur.csproj", "{09683D73-98F5-41DE-AD4A-4732793902D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scruff", "src\Scruff\Scruff.csproj", "{44229CF2-4E87-4FAA-B915-FA45608C5619}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scruff", "src\Scruff\Scruff.csproj", "{44229CF2-4E87-4FAA-B915-FA45608C5619}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparkIV", "src\SparkIV\SparkIV.csproj", "{0997A2C9-0562-4CBB-8560-5514D6163D97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SparkIV", "src\SparkIV\SparkIV.csproj", "{0997A2C9-0562-4CBB-8560-5514D6163D97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Release|x64 = Release|x64
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B2A6C9F9-A2BA-49EE-A364-2E839BD381BA}.Debug|x64.ActiveCfg = Debug|x64
-		{B2A6C9F9-A2BA-49EE-A364-2E839BD381BA}.Debug|x64.Build.0 = Debug|x64
-		{B2A6C9F9-A2BA-49EE-A364-2E839BD381BA}.Release|x64.ActiveCfg = Release|x64
-		{B2A6C9F9-A2BA-49EE-A364-2E839BD381BA}.Release|x64.Build.0 = Release|x64
-		{09683D73-98F5-41DE-AD4A-4732793902D6}.Debug|x64.ActiveCfg = Debug|x64
-		{09683D73-98F5-41DE-AD4A-4732793902D6}.Debug|x64.Build.0 = Debug|x64
-		{09683D73-98F5-41DE-AD4A-4732793902D6}.Release|x64.ActiveCfg = Release|x64
-		{09683D73-98F5-41DE-AD4A-4732793902D6}.Release|x64.Build.0 = Release|x64
-		{44229CF2-4E87-4FAA-B915-FA45608C5619}.Debug|x64.ActiveCfg = Debug|x64
-		{44229CF2-4E87-4FAA-B915-FA45608C5619}.Release|x64.ActiveCfg = Release|x64
-		{0997A2C9-0562-4CBB-8560-5514D6163D97}.Debug|x64.ActiveCfg = Debug|x64
-		{0997A2C9-0562-4CBB-8560-5514D6163D97}.Debug|x64.Build.0 = Debug|x64
-		{0997A2C9-0562-4CBB-8560-5514D6163D97}.Release|x64.ActiveCfg = Release|x64
-		{0997A2C9-0562-4CBB-8560-5514D6163D97}.Release|x64.Build.0 = Release|x64
+		{B2A6C9F9-A2BA-49EE-A364-2E839BD381BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2A6C9F9-A2BA-49EE-A364-2E839BD381BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2A6C9F9-A2BA-49EE-A364-2E839BD381BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2A6C9F9-A2BA-49EE-A364-2E839BD381BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09683D73-98F5-41DE-AD4A-4732793902D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09683D73-98F5-41DE-AD4A-4732793902D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09683D73-98F5-41DE-AD4A-4732793902D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09683D73-98F5-41DE-AD4A-4732793902D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44229CF2-4E87-4FAA-B915-FA45608C5619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44229CF2-4E87-4FAA-B915-FA45608C5619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0997A2C9-0562-4CBB-8560-5514D6163D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0997A2C9-0562-4CBB-8560-5514D6163D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0997A2C9-0562-4CBB-8560-5514D6163D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0997A2C9-0562-4CBB-8560-5514D6163D97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
