@@ -30,6 +30,8 @@ using System;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Media3D;
+using MouseEventArgs = System.Windows.Input.MouseEventArgs;
+using Point = System.Windows.Point;
 
 namespace RageLib.Models.Model3DViewer
 {

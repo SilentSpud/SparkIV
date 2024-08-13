@@ -21,6 +21,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Media3D;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace RageLib.Models.Model3DViewer
 {
