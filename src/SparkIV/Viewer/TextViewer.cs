@@ -27,7 +27,7 @@ namespace SparkIV.Viewer
 {
   class TextViewer : IViewer
   {
-    public Control GetView(File file)
+    public Control GetView(RageLib.FileSystem.Common.File file)
     {
       var data = file.GetData();
 

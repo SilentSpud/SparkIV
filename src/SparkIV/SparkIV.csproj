@@ -5,11 +5,22 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <RootNamespace>SparkIV</RootNamespace>
     <AssemblyName>SparkIV</AssemblyName>
+    <AssemblyDescription>IMG/RPF Archive Viewer/Editor for GTA IV &amp; EFLC</AssemblyDescription>
+    <AssemblyCompany>Ahmed Walid</AssemblyCompany>
+    <AssemblyProduct>SparkIV Beta</AssemblyProduct>
+    <AssemblyCopyright>2008-2020</AssemblyCopyright>
+    <AssemblyTrademark></AssemblyTrademark>
+    <AssemblyCulture></AssemblyCulture>
+    <Version>1.0.0.0</Version>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>..\GTAIV.ico</ApplicationIcon>
-    <Platforms>AnyCPU;ARM32</Platforms>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RageLib\RageLib.csproj" />
+  </ItemGroup>
 
 </Project>

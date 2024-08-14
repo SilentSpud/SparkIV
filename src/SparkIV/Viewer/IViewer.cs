@@ -25,6 +25,6 @@ namespace SparkIV.Viewer
 {
   interface IViewer
   {
-    Control GetView(File file);
+    Control GetView(RageLib.FileSystem.Common.File file);
   }
 }

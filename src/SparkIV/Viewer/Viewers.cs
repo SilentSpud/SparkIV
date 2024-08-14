@@ -52,7 +52,7 @@ namespace SparkIV.Viewer
       }
     }
 
-    public static bool HasViewer(File file)
+    public static bool HasViewer(RageLib.FileSystem.Common.File file)
     {
       var fileName = file.Name;
       var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);
@@ -60,7 +60,7 @@ namespace SparkIV.Viewer
       return _viewers.ContainsKey(extension);
     }
 
-    public static Control GetControl(File file)
+    public static Control GetControl(RageLib.FileSystem.Common.File file)
     {
       var fileName = file.Name;
       var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);

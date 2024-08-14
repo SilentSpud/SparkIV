@@ -24,6 +24,6 @@ namespace SparkIV.Editor
 {
   interface IEditor
   {
-    void LaunchEditor(FileSystem fs, File file);
+    void LaunchEditor(FileSystem fs, RageLib.FileSystem.Common.File file);
   }
 }

@@ -51,7 +51,7 @@ namespace SparkIV.Editor
       }
     }
 
-    public static bool HasEditor(File file)
+    public static bool HasEditor(RageLib.FileSystem.Common.File file)
     {
       var fileName = file.Name;
       var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);
@@ -70,11 +70,11 @@ namespace SparkIV.Editor
       return hasEditor;
     }
 
-    public static void LaunchEditor(FileSystem fs, File file)
+    public static void LaunchEditor(FileSystem fs, RageLib.FileSystem.Common.File file)
     {
       var fileName = file.Name;
       var extension = fileName.Substring(fileName.LastIndexOf('.') + 1);
-
+    
       if (_editors.ContainsKey(extension))
       {
         var editor = _editors[extension];

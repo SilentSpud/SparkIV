@@ -23,13 +23,12 @@ using System.IO;
 using Microsoft.Win32;
 using RageLib.FileSystem;
 using RageLib.FileSystem.Common;
-using File = RageLib.FileSystem.Common.File;
 
 namespace SparkIV.Editor
 {
   class ExternalEditor : IEditor, IDynamicEditor
   {
-    public void LaunchEditor(FileSystem fs, File file)
+    public void LaunchEditor(FileSystem fs, RageLib.FileSystem.Common.File file)
     {
       if (fs is RealFileSystem)
       {

@@ -22,6 +22,7 @@ using System;
 using System.Collections;
 using System.Windows.Forms;
 using RageLib.FileSystem.Common;
+using File = RageLib.FileSystem.Common.File;
 
 namespace SparkIV
 {
