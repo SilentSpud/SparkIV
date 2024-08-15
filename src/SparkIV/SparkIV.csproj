@@ -11,7 +11,7 @@
     <AssemblyCopyright>2008-2020</AssemblyCopyright>
     <AssemblyTrademark></AssemblyTrademark>
     <AssemblyCulture></AssemblyCulture>
-    <Version>1.0.0.0</Version>
+    <Version>0.9.0.0</Version>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
