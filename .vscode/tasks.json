@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build RageLib",
+      "command": "dotnet",
+      "type": "process",
+      "problemMatcher": "$msCompile",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/RageLib/RageLib.csproj"
+      ],
+    },
+    {
+      "label": "build Resoursaur",
+      "command": "dotnet",
+      "type": "process",
+      "problemMatcher": "$msCompile",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/Resoursaur/Resoursaur.csproj"
+      ],
+    },
+    {
+      "label": "build Scruff",
+      "command": "dotnet",
+      "type": "process",
+      "problemMatcher": "$msCompile",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/Scruff/Scruff.csproj"
+      ],
+    },
+    {
+      "label": "build SparkIV",
+      "command": "dotnet",
+      "type": "process",
+      "problemMatcher": "$msCompile",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/SparkIV/SparkIV.csproj"
+      ],
+    }
+  ]
+}

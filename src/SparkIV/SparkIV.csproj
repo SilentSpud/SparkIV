@@ -23,4 +23,11 @@
     <ProjectReference Include="..\RageLib\RageLib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="SparkIV.Config.xml">
+      <Link>SparkIV.Config.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

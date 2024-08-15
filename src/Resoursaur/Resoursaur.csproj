@@ -10,4 +10,8 @@
     <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RageLib\RageLib.csproj" />
+  </ItemGroup>
+
 </Project>
