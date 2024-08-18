@@ -1,0 +1,50 @@
+name: Build and Deploy
+
+env:
+  VERSION: "0.8.${{ github.run_number }}"
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+
+      - name: Restore NuGet Packages
+        run: dotnet restore /p:Platform="Any CPU"
+
+      - name: Build
+        run: dotnet build .\SparkIV.sln /target:SparkIV --configuration Release /p:Platform="Any CPU"
+
+      - name: Pack
+        run: dotnet publish .\SparkIV.sln /p:PublishSingleFile=true /target:SparkIV --configuration Release /p:Platform="Any CPU"
+
+      - name: Publish artifact
+        run: |
+          mkdir -p ${{ github.workspace }}/artifacts
+          cp -R SRC/SparkIV/bin/Release ${{ github.workspace }}/artifacts
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          tag_name: v${{ env.VERSION }}
+          release_name: Auto generated build v${{ env.VERSION }}
+          draft: false
+          prerelease: false
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Release
+          path: ${{ github.workspace }}/artifacts
