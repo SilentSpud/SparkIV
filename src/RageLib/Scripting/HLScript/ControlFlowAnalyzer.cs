@@ -119,7 +119,7 @@ namespace RageLib.Scripting.HLScript
     /// <param name="endInstruction">exclusive (this is where our codepath returns to)</param>
     /// <returns></returns>
     private static CodePath ExtractPath(string identifier, CodePath parentPath, HLInstruction parentExitInstruction, HLInstruction startInstruction,
-                                 HLInstruction endInstruction)
+                                HLInstruction endInstruction)
     {
       CodePath toPath = CreateCodePath(identifier, startInstruction.Instruction.Offset, parentPath);
       toPath.ParentCodePath = parentPath;
@@ -165,7 +165,7 @@ namespace RageLib.Scripting.HLScript
         if (parentPath.EndInstruction != null)
         {
           parentPath.EndOffset = parentPath.EndInstruction.Instruction.Offset +
-                                 parentPath.EndInstruction.Instruction.InstructionLength;
+                                parentPath.EndInstruction.Instruction.InstructionLength;
         }
         else
         {
@@ -324,7 +324,7 @@ namespace RageLib.Scripting.HLScript
     private void AnalyzeConditionalBranch(HLInstruction branchInstruction)
     {
       int branchOffset = branchInstruction.Instruction.Offset +
-             branchInstruction.Instruction.InstructionLength;
+            branchInstruction.Instruction.InstructionLength;
 
       CodePath parentPath = branchInstruction.ParentCodePath;
 
@@ -393,7 +393,7 @@ namespace RageLib.Scripting.HLScript
 
               HLInstruction startInstruction = parentPath.InstructionMap[offset];
               CodePath newPath = ExtractPath(path.ParentCodePath.Name + "_temp", parentPath,
-                                             startInstruction.PreviousInstruction, startInstruction, null);
+                                            startInstruction.PreviousInstruction, startInstruction, null);
 
               // Now we can merge it with this path's parent
 

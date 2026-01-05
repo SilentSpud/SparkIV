@@ -65,7 +65,7 @@ namespace RageLib.Scripting.Output
         }
 
         writer.WriteLine(string.Format("{0} {1}({2})", function.ReturnCount > 0 ? "function" : "void",
-                                       function.Name, sb));
+                                      function.Name, sb));
         writer.WriteLine("{");
 
         if (function.VariableCount > 2)

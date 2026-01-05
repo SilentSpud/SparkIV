@@ -40,7 +40,7 @@ namespace RageLib.Scripting.Output
       foreach (Function function in program.Functions)
       {
         writer.WriteLine(string.Format(".function {0} (params={1}, vars={2}, return={3})",
-                                       function.Name, function.ParameterCount, function.VariableCount, function.ReturnCount));
+                                      function.Name, function.ParameterCount, function.VariableCount, function.ReturnCount));
 
         ProcessCodePath(writer, function.MainCodePath, "   ");
 
@@ -78,8 +78,8 @@ namespace RageLib.Scripting.Output
       {
         writer.Write(indent);
         writer.WriteLine(string.Format(".native {1} // in={2}, out={3}", instruction.Instruction.OpCode,
-                                       instruction.Instruction.Operands[2], instruction.Instruction.Operands[0],
-                                       instruction.Instruction.Operands[1]));
+                                      instruction.Instruction.Operands[2], instruction.Instruction.Operands[0],
+                                      instruction.Instruction.Operands[1]));
       }
       else if (instruction.UnconditionalBranch || instruction.Instruction.OpCode == OpCode.Jump)
       {

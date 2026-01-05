@@ -32,10 +32,10 @@ namespace RageLib.Common
       get
       {
         return new[]
-                   {
-                               @"SOFTWARE\Rockstar Games\EFLC",
-                               @"SOFTWARE\Wow6432Node\Rockstar Games\EFLC"
-                           };
+                  {
+                              @"SOFTWARE\Rockstar Games\EFLC",
+                              @"SOFTWARE\Wow6432Node\Rockstar Games\EFLC"
+                          };
       }
     }
 
@@ -44,13 +44,13 @@ namespace RageLib.Common
       get
       {
         return new uint[]
-                   {
-                               //EFLC
-                               0xB82A28 /* 1.1.3 */,
-                               0xBEF028 /* 1.1.2 */,
-                               0xC705E0 /* 1.1.1 */,
-                               0xC6DEEC /* 1.1.0 */,
-                   };
+                  {
+                              //EFLC
+                              0xB82A28 /* 1.1.3 */,
+                              0xBEF028 /* 1.1.2 */,
+                              0xC705E0 /* 1.1.1 */,
+                              0xC6DEEC /* 1.1.0 */,
+                  };
       }
     }
   }

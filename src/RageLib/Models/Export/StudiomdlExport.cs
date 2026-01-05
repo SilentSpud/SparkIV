@@ -192,9 +192,9 @@ namespace RageLib.Models.Export
       var position = v.Position;
 
       sw.WriteLine("{0}   {1} {2} {3}   {4} {5} {6}   {7} {8}   1 0   1.000000", boneIndex,
-                   F(position.X), F(position.Y), F(position.Z),
-                   F(normal.X), F(normal.Y), F(normal.Z),
-                   F(uv.X), F(uv.Y));
+                  F(position.X), F(position.Y), F(position.Z),
+                  F(normal.X), F(normal.Y), F(normal.Z),
+                  F(uv.X), F(uv.Y));
     }
 
     private static void ExportNodes(TextWriter sw, Bone bone, Bone parentBone)
@@ -210,8 +210,8 @@ namespace RageLib.Models.Export
     private static void ExportSkeleton(TextWriter sw, Bone bone)
     {
       sw.WriteLine("{0}   {1} {2} {3}   {4} {5} {6}", bone.Index,
-                   F(bone.Position.X), F(bone.Position.Y), F(bone.Position.Z),
-                   F(bone.Rotation.X), F(bone.Rotation.Y), F(bone.Rotation.Z));
+                  F(bone.Position.X), F(bone.Position.Y), F(bone.Position.Z),
+                  F(bone.Rotation.X), F(bone.Rotation.Y), F(bone.Rotation.Z));
 
       foreach (var childBone in bone.Children)
       {

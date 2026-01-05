@@ -205,15 +205,15 @@ namespace SparkIV
               /*
               string compressed = file.IsCompressed ? "Yes (" + FriendlySize(file.CompressedSize) + ")" : "No";
               lvi.SubItems.Add(compressed);
-               */
+              */
 
               string resources = file.IsResource ? "Yes" : "No";
               if (file.IsResource)
               {
                 string rscType = Enum.IsDefined(file.ResourceType.GetType(), file.ResourceType)
-                                     ?
-                                         file.ResourceType.ToString()
-                                     : string.Format("Unknown 0x{0:x}", (int)file.ResourceType);
+                                    ?
+                                        file.ResourceType.ToString()
+                                    : string.Format("Unknown 0x{0:x}", (int)file.ResourceType);
                 resources += " (" + rscType + ")";
               }
               lvi.SubItems.Add(resources);

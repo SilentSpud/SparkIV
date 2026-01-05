@@ -32,9 +32,9 @@ namespace RageLib.Audio.SoundBank
     }
 
     private static readonly int[] indexTable = {
-                                                       -1, -1, -1, -1, 2, 4, 6, 8,
-                                                       -1, -1, -1, -1, 2, 4, 6, 8,
-                                                   };
+                                                      -1, -1, -1, -1, 2, 4, 6, 8,
+                                                      -1, -1, -1, -1, 2, 4, 6, 8,
+                                                  };
 
     private static readonly int[] stepsizeTable = {
                                                           7, 8, 9, 10, 11, 12, 13, 14, 16, 17,

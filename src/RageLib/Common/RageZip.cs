@@ -26,10 +26,10 @@ namespace RageLib.Common
   public class RageZip
   {
     /*
-     * rageZipInflate *rageZipInflateInit(byte *input, int inputLength)
-     * bool rageZipInflateProcess(rageZipInflate *rzi, byte *output, int outputLength)
-     * void rageZipInflateEnd(rageZipInflate *rzi)
-     */
+    * rageZipInflate *rageZipInflateInit(byte *input, int inputLength)
+    * bool rageZipInflateProcess(rageZipInflate *rzi, byte *output, int outputLength)
+    * void rageZipInflateEnd(rageZipInflate *rzi)
+    */
 
     [DllImport("ragezip.dll", CallingConvention = CallingConvention.StdCall, EntryPoint = "rageZipInflateInit")]
     public static extern IntPtr InflateInit(

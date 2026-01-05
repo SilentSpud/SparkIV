@@ -80,7 +80,7 @@ namespace RageLib.Models
 
         return bmp;
     }
-     */
+    */
 
     internal static ModelNode GenerateModel(FragTypeModel fragTypeModel, TextureFile[] textures)
     {

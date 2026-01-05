@@ -89,7 +89,7 @@ namespace RageLib.Common.Compression
 
           destination.Write(outData, 0, (int) outChunkSize);
       }
-       */
+      */
     }
   }
 }

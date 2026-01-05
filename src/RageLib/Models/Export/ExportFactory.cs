@@ -29,9 +29,9 @@ namespace RageLib.Models.Export
     static ExportFactory()
     {
       exporterTypes = new[]
-                         {
-                                   new StudiomdlExport(),
-                               };
+                        {
+                                  new StudiomdlExport(),
+                              };
     }
 
     public static string GenerateFilterString()

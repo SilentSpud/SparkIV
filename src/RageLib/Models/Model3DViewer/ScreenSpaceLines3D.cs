@@ -467,8 +467,8 @@ namespace RageLib.Models.Model3DViewer
           Point3D p1 = matrixStack.Peek().Transform(positions[i]);
           Point3D p2 =
               matrixStack.Peek().Transform(new Point3D(positions[i].X + normals[i].X,
-                                                       positions[i].Y + normals[i].Y,
-                                                       positions[i].Z + normals[i].Z));
+                                                      positions[i].Y + normals[i].Y,
+                                                      positions[i].Z + normals[i].Z));
 
           Points.Add(p1);
           Points.Add(p2);

@@ -90,7 +90,7 @@ namespace RageLib.Scripting.Script
       ArrayImplode,     // Takes N items off the stack, and stores them in the array (similar to explode)
                         // Note that the topmost item on the stack will be the last item on the stack (so that we can explode again)
 
-       */
+      */
 
       AddEntry(OpCode.Var0, 0, 1);
       AddEntry(OpCode.Var1, 0, 1);

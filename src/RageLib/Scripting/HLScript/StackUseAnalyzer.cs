@@ -218,7 +218,7 @@ namespace RageLib.Scripting.HLScript
                 tempPointerValue = PopPointer(stack);
                 tempLiteralValue = stack.Pop() as StackValueLiteral;
                 Debug.Assert(tempLiteralValue != null &&
-                             tempLiteralValue.ValueType == StackValueType.Integer);
+                            tempLiteralValue.ValueType == StackValueType.Integer);
 
                 var explodeCount = (int)tempLiteralValue.Value;
                 for (int i = 0; i < explodeCount; i++)
@@ -233,7 +233,7 @@ namespace RageLib.Scripting.HLScript
                 tempPointerValue = PopPointer(stack);
                 tempLiteralValue = stack.Pop() as StackValueLiteral;
                 Debug.Assert(tempLiteralValue != null &&
-                             tempLiteralValue.ValueType == StackValueType.Integer);
+                            tempLiteralValue.ValueType == StackValueType.Integer);
 
                 var tempStack = new Stack<StackValue>();
                 var implodeCount = (int)tempLiteralValue.Value;
@@ -241,7 +241,7 @@ namespace RageLib.Scripting.HLScript
                 {
                   tempStack.Push(
                       new StackValueAssign(new StackValuePointerIndex(tempPointerValue, i),
-                                           stack.Pop()));
+                                          stack.Pop()));
                 }
 
                 var stackValueGroup = new ProcessedStackValueGroup();
@@ -264,7 +264,7 @@ namespace RageLib.Scripting.HLScript
               case OpCode.Var:
                 tempLiteralValue = stack.Pop() as StackValueLiteral;
                 Debug.Assert(tempLiteralValue != null &&
-                             tempLiteralValue.ValueType == StackValueType.Integer);
+                            tempLiteralValue.ValueType == StackValueType.Integer);
 
                 stack.Push(new StackValuePointerVar(StackValuePointerType.Stack,
                                                     (int)tempLiteralValue.Value));
@@ -272,7 +272,7 @@ namespace RageLib.Scripting.HLScript
               case OpCode.LocalVar:
                 tempLiteralValue = stack.Pop() as StackValueLiteral;
                 Debug.Assert(tempLiteralValue != null &&
-                             tempLiteralValue.ValueType == StackValueType.Integer);
+                            tempLiteralValue.ValueType == StackValueType.Integer);
 
                 stack.Push(new StackValuePointerVar(StackValuePointerType.Local,
                                                     (int)tempLiteralValue.Value));
@@ -280,7 +280,7 @@ namespace RageLib.Scripting.HLScript
               case OpCode.GlobalVar:
                 tempLiteralValue = stack.Pop() as StackValueLiteral;
                 Debug.Assert(tempLiteralValue != null &&
-                             tempLiteralValue.ValueType == StackValueType.Integer);
+                            tempLiteralValue.ValueType == StackValueType.Integer);
 
                 stack.Push(new StackValuePointerVar(StackValuePointerType.Global,
                                                     (int)tempLiteralValue.Value));
@@ -291,7 +291,7 @@ namespace RageLib.Scripting.HLScript
                 tempAnyValue = stack.Pop();
                 Debug.Assert(tempPointerValue != null);
                 Debug.Assert(tempLiteralValue != null &&
-                             tempLiteralValue.ValueType == StackValueType.Integer);
+                            tempLiteralValue.ValueType == StackValueType.Integer);
 
                 stack.Push(new StackValuePointerArray(tempPointerValue, tempAnyValue,
                                                       (int)tempLiteralValue.Value));
@@ -334,14 +334,14 @@ namespace RageLib.Scripting.HLScript
                 tempLiteralValue = stack.Pop() as StackValueLiteral;
 
                 Debug.Assert(tempLiteralValue != null &&
-                             tempLiteralValue.ValueType == StackValueType.Integer);
+                            tempLiteralValue.ValueType == StackValueType.Integer);
 
                 var targetSize = (uint)(int)tempLiteralValue.Value;
 
                 tempLiteralValue = stack.Pop() as StackValueLiteral;
 
                 Debug.Assert(tempLiteralValue != null &&
-                             tempLiteralValue.ValueType == StackValueType.Integer);
+                            tempLiteralValue.ValueType == StackValueType.Integer);
 
                 var sourceSize = (uint)(int)tempLiteralValue.Value;
 
@@ -366,7 +366,7 @@ namespace RageLib.Scripting.HLScript
                 tempLiteralValue = stack.Pop() as StackValueLiteral;
 
                 Debug.Assert(tempLiteralValue != null &&
-                     tempLiteralValue.ValueType == StackValueType.Integer);
+                    tempLiteralValue.ValueType == StackValueType.Integer);
 
                 var protectMode = (int)tempLiteralValue.Value;
 
@@ -375,7 +375,7 @@ namespace RageLib.Scripting.HLScript
                 tempLiteralValue = stack.Pop() as StackValueLiteral;
 
                 Debug.Assert(tempLiteralValue != null &&
-                     tempLiteralValue.ValueType == StackValueType.Integer);
+                    tempLiteralValue.ValueType == StackValueType.Integer);
 
                 var protectCount = (int)tempLiteralValue.Value;
 

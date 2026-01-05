@@ -88,18 +88,12 @@ namespace RageLib.Common.Resources
         throw new Exception("Not a valid resource");
       }
 
-      switch (_header.CompressCodec)
+      _codec = _header.CompressCodec switch
       {
-        case CompressionType.LZX:
-          _codec = CompressionCodecFactory.LZX;
-          break;
-        case CompressionType.Deflate:
-          _codec = CompressionCodecFactory.Deflate;
-          break;
-        default:
-          throw new ArgumentOutOfRangeException();
-      }
-
+        CompressionType.LZX => CompressionCodecFactory.LZX,
+        CompressionType.Deflate => CompressionCodecFactory.Deflate,
+        _ => throw new ArgumentOutOfRangeException("Invalid compression codec"),
+      };
       var ms = new MemoryStream();
       _codec.Decompress(data, ms);
 
@@ -151,6 +145,7 @@ namespace RageLib.Common.Resources
     {
       _systemMemData = null;
       _graphicsMemData = null;
+      GC.SuppressFinalize(this);
     }
 
     #endregion

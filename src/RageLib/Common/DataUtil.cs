@@ -32,7 +32,9 @@ namespace RageLib.Common
       dataIn.CopyTo(data, 0);
 
       // Create our Rijndael class
+#pragma warning disable SYSLIB0022 // Type or member is obsolete
       Rijndael rj = Rijndael.Create();
+#pragma warning restore SYSLIB0022 // Type or member is obsolete
       rj.BlockSize = 128;
       rj.KeySize = 256;
       rj.Mode = CipherMode.ECB;
@@ -74,9 +76,9 @@ namespace RageLib.Common
     public static uint SwapEndian(uint v)
     {
       return ((v >> 24) & 0xFF) |
-             ((v >> 8) & 0xFF00) |
-             ((v & 0xFF00) << 8) |
-             ((v & 0xFF) << 24);
+            ((v >> 8) & 0xFF00) |
+            ((v & 0xFF00) << 8) |
+            ((v & 0xFF) << 24);
     }
   }
 }

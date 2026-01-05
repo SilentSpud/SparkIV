@@ -1,4 +1,4 @@
-﻿namespace SparkIV.Viewer.Script
+namespace SparkIV.Viewer.Script
 {
     partial class ScriptView
     {

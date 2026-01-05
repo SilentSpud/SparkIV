@@ -134,9 +134,9 @@ namespace RageLib.Scripting.Script
     // Gets 1 byte from code to determine string length (N), pushes the string address onto the stack, and then IP += N + 1;
 
     NullObj, // Pushes an unknown table ptr onto the stack (%r23 ==> .data:830F4FB4 unk_830F4FB4)
-             // All code seems to deref this ptr directly and not index into it
-             // Its never written to by the scripts, only read from.
-             // Best guess is that its a null/disposed object reference
+            // All code seems to deref this ptr directly and not index into it
+            // Its never written to by the scripts, only read from.
+            // Best guess is that its a null/disposed object reference
 
     StrCpy,
 

@@ -217,7 +217,7 @@ namespace RageLib.Textures
 
       g.DrawString(textMain, fontBold, brushFG, textLeft, textSpacer + e.Bounds.Top + TextureListIconPadding);
       g.DrawString(textSub, fontNormal, brushFG, textLeft,
-                   textSpacer + sizeMain.Height + e.Bounds.Top + TextureListIconPadding);
+                  textSpacer + sizeMain.Height + e.Bounds.Top + TextureListIconPadding);
 
     }
   }

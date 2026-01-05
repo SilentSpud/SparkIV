@@ -35,7 +35,7 @@ namespace RageLib.Models.Model3DViewer
     private static Matrix3D GetViewMatrix(ProjectionCamera camera)
     {
       Debug.Assert(camera != null,
-                   "Caller needs to ensure camera is non-null.");
+                  "Caller needs to ensure camera is non-null.");
 
       // This math is identical to what you find documented for
       // D3DXMatrixLookAtRH with the exception that WPF uses a
@@ -92,7 +92,7 @@ namespace RageLib.Models.Model3DViewer
     private static Matrix3D GetProjectionMatrix(OrthographicCamera camera, double aspectRatio)
     {
       Debug.Assert(camera != null,
-                   "Caller needs to ensure camera is non-null.");
+                  "Caller needs to ensure camera is non-null.");
 
       // This math is identical to what you find documented for
       // D3DXMatrixOrthoRH with the exception that in WPF only
@@ -117,7 +117,7 @@ namespace RageLib.Models.Model3DViewer
     private static Matrix3D GetProjectionMatrix(PerspectiveCamera camera, double aspectRatio)
     {
       Debug.Assert(camera != null,
-                   "Caller needs to ensure camera is non-null.");
+                  "Caller needs to ensure camera is non-null.");
 
       // This math is identical to what you find documented for
       // D3DXMatrixPerspectiveFovRH with the exception that in
@@ -383,15 +383,15 @@ namespace RageLib.Models.Model3DViewer
       double z2 = bounds.Z + bounds.SizeZ;
 
       Point3D[] points = new Point3D[] {
-                                                 new Point3D(x1, y1, z1),
-                                                 new Point3D(x1, y1, z2),
-                                                 new Point3D(x1, y2, z1),
-                                                 new Point3D(x1, y2, z2),
-                                                 new Point3D(x2, y1, z1),
-                                                 new Point3D(x2, y1, z2),
-                                                 new Point3D(x2, y2, z1),
-                                                 new Point3D(x2, y2, z2),
-                                             };
+                                                new Point3D(x1, y1, z1),
+                                                new Point3D(x1, y1, z2),
+                                                new Point3D(x1, y2, z1),
+                                                new Point3D(x1, y2, z2),
+                                                new Point3D(x2, y1, z1),
+                                                new Point3D(x2, y1, z2),
+                                                new Point3D(x2, y2, z1),
+                                                new Point3D(x2, y2, z2),
+                                            };
 
       transform.Transform(points);
 

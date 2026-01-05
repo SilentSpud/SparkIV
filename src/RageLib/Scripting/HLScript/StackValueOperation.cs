@@ -28,7 +28,7 @@ namespace RageLib.Scripting.HLScript
   internal class StackValueOperation : StackValue
   {
     public StackValueOperation(StackValueOperationType type, StackValueType valueType,
-                               IEnumerable<StackValue> operands)
+                              IEnumerable<StackValue> operands)
     {
       ProcessedValue = true;
       ValueType = valueType;

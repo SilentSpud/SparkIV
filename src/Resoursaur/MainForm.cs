@@ -82,8 +82,8 @@ namespace Resoursaur
       lblFileData.Text = f.Name;
 
       string rscType = Enum.IsDefined(_resourceFile.Type.GetType(), _resourceFile.Type)
-                           ? _resourceFile.Type.ToString()
-                           : string.Format("Unknown 0x{0:x}", (int)_resourceFile.Type);
+                          ? _resourceFile.Type.ToString()
+                          : string.Format("Unknown 0x{0:x}", (int)_resourceFile.Type);
       lblTypeData.Text = rscType;
 
       lblCompressionData.Text = _resourceFile.Compression.ToString();

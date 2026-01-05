@@ -32,13 +32,12 @@ namespace RageLib.Common.ResourceTypes
       {
         var m = new Matrix44
         {
-          M = new[]
-                                     {
-                                                 1f, 0f, 0f, 0f,
-                                                 0f, 1f, 0f, 0f,
-                                                 0f, 0f, 1f, 0f,
-                                                 0f, 0f, 0f, 1f,
-                                             }
+          M = new[] {
+            1f, 0f, 0f, 0f,
+            0f, 1f, 0f, 0f,
+            0f, 0f, 1f, 0f,
+            0f, 0f, 0f, 1f,
+          }
         };
         return m;
       }

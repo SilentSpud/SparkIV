@@ -1,7 +1,7 @@
 /**********************************************************************\
 
- RageLib - Models
- Copyright (C) 2009  Arushan/Aru <oneforaru at gmail.com>
+ Scruff -- A Rage Script File Decompiler/Disassembler
+ Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -18,20 +18,15 @@
 
 \**********************************************************************/
 
-namespace RageLib.Models.Resource.Models
-{
-  internal struct VertexElement
-  {
-    public int StreamIndex;
-    public VertexElementUsage Usage;
-    public int UsageIndex;
-    public int Size;
-    public VertexElementType Type;
-    /*
-    // The following fields are used for some other purposes, and we don't really need them here
-    public int F14;
-    public short F18;
-    public short F1A;
-    */
-  }
-}
+using System.Reflection;
+using System.Runtime.InteropServices;
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("831d43e5-38fe-49fd-a6c2-c1bcfa7fd48d")]

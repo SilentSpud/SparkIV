@@ -46,12 +46,12 @@ namespace RageLib.Audio.SoundBank.MultiChannel
     {
       numSamples16Bit = br.ReadInt32();
       unk3 = new short[]
-                 {
-                           br.ReadInt16(),
-                           br.ReadInt16(),
-                           br.ReadInt16(),
-                           br.ReadInt16(),
-                 };
+                {
+                          br.ReadInt16(),
+                          br.ReadInt16(),
+                          br.ReadInt16(),
+                          br.ReadInt16(),
+                };
 
       numStates = br.ReadInt32();
 

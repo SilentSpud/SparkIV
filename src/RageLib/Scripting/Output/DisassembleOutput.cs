@@ -48,7 +48,7 @@ namespace RageLib.Scripting.Output
       {
           writer.WriteLine(string.Format("0x{0:x}", item));
       }
-       * */
+      * */
     }
 
     #endregion

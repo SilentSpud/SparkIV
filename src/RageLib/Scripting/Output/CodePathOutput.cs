@@ -47,8 +47,8 @@ namespace RageLib.Scripting.Output
           if (path.ParentCodePath != null)
           {
             writer.WriteLine("        parent: {0}, exit: 0x{1:x}, reentry: 0x{2:x}",
-                             path.ParentCodePath.Name, path.ParentExitInstruction.Instruction.Offset,
-                             path.ParentEntryTargetInstruction.Instruction.Offset);
+                            path.ParentCodePath.Name, path.ParentExitInstruction.Instruction.Offset,
+                            path.ParentEntryTargetInstruction.Instruction.Offset);
           }
         }
         writer.WriteLine();

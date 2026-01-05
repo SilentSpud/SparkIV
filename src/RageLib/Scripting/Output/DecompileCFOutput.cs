@@ -40,8 +40,8 @@ namespace RageLib.Scripting.Output
       foreach (Function function in program.Functions)
       {
         writer.WriteLine(string.Format("{0} {1}(params={2}, vars={3})",
-                                       function.ReturnCount > 0 ? "function" : "void", function.Name,
-                                       function.ParameterCount, function.VariableCount));
+                                      function.ReturnCount > 0 ? "function" : "void", function.Name,
+                                      function.ParameterCount, function.VariableCount));
         writer.WriteLine("{");
 
         ProcessCodePath(writer, function.MainCodePath, "   ");
@@ -67,7 +67,7 @@ namespace RageLib.Scripting.Output
       else if (instruction.Instruction is InstructionNative)
       {
         writer.WriteLine(string.Format("{0}(in={1}, out={2})", instruction.Instruction.Operands[2],
-                                       instruction.Instruction.Operands[0], instruction.Instruction.Operands[1]));
+                                      instruction.Instruction.Operands[0], instruction.Instruction.Operands[1]));
       }
       else
       {
@@ -99,7 +99,7 @@ namespace RageLib.Scripting.Output
         if (instruction.IsConditionalBranch)
         {
           writer.WriteLine(string.Format("{0}if ({1})", indent,
-                                         instruction.DefaultConditional ? "true" : "false"));
+                                        instruction.DefaultConditional ? "true" : "false"));
           writer.WriteLine(indent + "{");
           ProcessCodePath(writer, instruction.BranchCodesPaths[instruction.DefaultConditional],
                           indent + "    ");

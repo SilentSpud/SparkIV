@@ -55,7 +55,7 @@ namespace SparkIV
         if (_column > -1)
         {
           int returnVal = String.Compare(((ListViewItem)x).SubItems[_column].Text,
-                                         ((ListViewItem)y).SubItems[_column].Text);
+                                        ((ListViewItem)y).SubItems[_column].Text);
 
           returnVal *= _descending ? -1 : 1;
           return returnVal;

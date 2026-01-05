@@ -36,7 +36,7 @@ namespace RageLib.Common.Compression
 
       var dataBuffer = new byte[CopyBufferSize];
       StreamUtils.Copy(source, deflater, dataBuffer);
-       */
+      */
 
       var def = new Deflater(Deflater.DEFAULT_COMPRESSION, true);
 

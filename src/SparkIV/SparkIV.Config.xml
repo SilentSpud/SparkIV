@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <SparkIV>
   <Viewers>
     <Viewer Extension="dat,txt,ide,ipl,ped,cmb,csv,ini,list,dcl,sps" Type="SparkIV.Viewer.TextViewer, SparkIV" />

@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 
  RageLib
  Copyright (C) 2008  Arushan/Aru <oneforaru at gmail.com>
@@ -47,12 +47,12 @@
                 
                 <Viewport3D.Camera>
                     <PerspectiveCamera x:Name="Camera"
-                                       FarPlaneDistance="100000"
-                                       UpDirection="0,1,0"
-                                       NearPlaneDistance="0.1"
-                                       LookDirection="0,0,-1"
-                                       Position="0,0,5"
-                                       FieldOfView="70" />
+                                      FarPlaneDistance="100000"
+                                      UpDirection="0,1,0"
+                                      NearPlaneDistance="0.1"
+                                      LookDirection="0,0,-1"
+                                      Position="0,0,5"
+                                      FieldOfView="70" />
                 </Viewport3D.Camera>
 
                 <Viewport3D.Children>
